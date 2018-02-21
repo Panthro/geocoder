@@ -1,6 +1,7 @@
 # Geocoder
 
 [![Build Status](https://travis-ci.org/Panthro/geocoder.svg?branch=master)](https://travis-ci.org/Panthro/geocoder)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/01464df5fe0a45169739b42b8a0a6f43)](https://www.codacy.com/app/panthro-rafael/geocoder?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Panthro/geocoder&amp;utm_campaign=Badge_Grade)
 
 
 ## Running
@@ -62,4 +63,3 @@ For this to be a real microservice there are a lot of "missing parts", but it de
     - But depending on the environment this is not needed. For isntance in a real PASS (like openshift or even rancher) you can use their own DNS, but with the drawback to lose the client side load balancing (Ribbon)
 - Better logging: Configuration and centralization, either with an aspect and a logback configuration to write json logs, or directly with a log collector (fluentd, logstash, etc)
  
-
