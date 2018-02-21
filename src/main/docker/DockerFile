@@ -1,0 +1,12 @@
+FROM openjdk:8-alpine
+VOLUME /tmp
+RUN apk add --update curl && \
+    rm -rf /var/cache/apk/*
+VOLUME /tmp
+ENV SERVER_PORT=8080
+EXPOSE 8080
+ADD *.jar app.jar
+RUN sh -c 'touch /app.jar'
+ENV DEFAULT_OPTIONS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1"
+ENV JAVA_OPTS=""
+CMD [ "sh", "-c", "java $JAVA_OPTS $DEFAULT_OPTIONS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
